@@ -1,0 +1,55 @@
+apply plugin: 'war'
+apply plugin: 'appengine'
+def appEmail = "noncents221@gmail.com"
+def appengineVersion = "1.9.42"
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.google.appengine:gradle-appengine-plugin:1.9.42"
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.org.akhikhl.gretty:gretty:2.0.0"
+    }
+}
+
+apply plugin: "org.akhikhl.gretty"
+repositories {
+    jcenter()
+    mavenCentral()
+}
+dependencies {
+    appengineSdk "com.google.appengine:appengine-java-sdk:${appengineVersion}"
+    compile "javax.servlet:servlet-api:2.5"
+    compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+}
+repositories {
+    jcenter()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    testCompile 'junit:junit:4.12'
+}
+appengine {
+
+    downloadSdk = true
+    appcfg {
+        email = "${appEmail}"
+        noCookies = true
+        oauth2 = true
+    }
+}
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7  
