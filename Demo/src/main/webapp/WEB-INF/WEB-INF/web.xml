@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>HelloGradleServlet</servlet-name>
+		<servlet-class>HelloGradleServlet</servlet-class>
+	</servlet>
+	<servlet>
+	<servlet-name>CreateUserServlet </servlet-name>
+	<servlet-class>CreateUserServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DisplayAllUsers</servlet-name>
+		<servlet-class>DisplayAllUsers</servlet-class>
+	</servlet>
+	
+	
+	<servlet>
+		<servlet-name>LoginPage</servlet-name>
+		<servlet-class>LoginPage</servlet-class>
+	</servlet><servlet-mapping>
+		<servlet-name>LoginPage</servlet-name>
+		<url-pattern>/loginpage</url-pattern>
+	</servlet-mapping><servlet-mapping>
+		<servlet-name>HelloGradleServlet</servlet-name>
+		<url-pattern>/hellogradle</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>CreateUserServlet</servlet-name>
+	<url-pattern>/createuser</url-pattern>
+	
+	
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>CreateUserServlet</servlet-name>
+	<url-pattern>/createuser</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>DisplayAllUsers</servlet-name>
+		<url-pattern>/display_all_users</url-pattern>
+	</servlet-mapping><welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>response_page.jsp</welcome-file>
+		<welcome-file>response.jsp</welcome-file>
+		<welcome-file>create_user.jsp</welcome-file>
+		<welcome-file>user_created_confirmation.jsp</welcome-file>
+		<welcome-file>create_new_user.jsp</welcome-file>
+		<welcome-file>login_confirmation.jsp</welcome-file>
+</welcome-file-list>
+	
+</web-app>
